@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/axios.js"></script>
+</head>
+
+<body>
+<!--    <div id="app">-->
+<!--        <a v-bind:href="url" v-if="url !== '1'">{{url}}</a>-->
+<!--        <input type="button" value="点击" v-on:click="btnCkick()">-->
+<!--        <span v-for="(arg,index) in args">{{arg}}</span>-->
+<!--    </div>-->
+    <form action="/login">
+        <label>
+            <input type="text" name="userName">
+        </label>
+        <label>
+            <input type="password" name="password">
+        </label>
+        <label>
+            <input type="submit" value="提交">
+        </label>
+        <label>
+            <input type="button" value="点击">
+        </label>
+        <label>
+            <input type="button" value="查询">
+        </label>
+    </form>
+    <div>
+        <ul></ul>
+    </div>
+    <img src="" alt="">
+<a href="space.html">个人空间</a>
+</body>
+
+<script src="js/test.js"></script>
+<script>
+    const img = document.querySelector('img')
+    const btn = document.querySelector('input[value="查询"]')
+    const num = document.querySelector('input[type="text"]')
+    btn.addEventListener("click",function ()
+    {
+        let numStr = num.value
+        let result = parseInt(numStr)
+        axios.get(`/users/${result}`).then(result=>{
+            const ul = document.querySelector('div ul')
+            ul.innerHTML = ''
+            let data = result.data.data
+            let li = document.createElement('li')
+            li.innerHTML = `<p>${data.userId}</p>
+                        <p>${data.userName}</p>`
+            ul.appendChild(li)
+            console.log(`data.uName = ` + data.userName)
+            img.src = data.avatar
+            sessionStorage.setItem("userInfo",JSON.stringify(data))
+        })
+    })
+</script>
+
+</html>

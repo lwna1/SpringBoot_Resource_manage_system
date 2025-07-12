@@ -1,0 +1,1045 @@
+.alert {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 630px;
+}
+
+.alert .Alert_Content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 560px;
+    height: 180px;
+    background-color: rgba(255,192,203,.8);
+    border-radius: 10px;
+}
+
+.alert .Alert_Content .Alert_Logo {
+    width: 560px;
+    height: 50px;
+}
+
+.alert .Alert_Content .Alert_Logo img {
+    float: left;
+    height: 50px;
+}
+
+.alert .Alert_Content .Alert_Logo_P {
+    float: left;
+    transform: translate(-13px,-2px);
+    height: 50px;
+    line-height: 50px;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(29, 102, 189);
+}
+
+.alert .Alert_Content .Alert_P {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: black;
+    font-size: 15px;
+}
+
+.alert .Alert_Content .Alert_Btn {
+    cursor: pointer;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background-color: #00a1d6;
+    color: white;
+    font-size: 17px;
+}
+
+
+.MySpace {
+    margin: 10px auto 0;
+    width: 1230px;
+    height: 600px;
+    border: 1px solid #C0C0C0;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 6px 32px -7px rgba(29, 102, 189,.46);
+}
+
+.MySpace .TotalInfo {
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px 40px;
+    width: 1230px;
+    height: 150px;
+    background-color: #DCDCDC;
+    border-radius: 30px 30px 0 0;
+}
+
+.MySpace .TotalInfo img {
+    position: relative;
+    top: 50%;
+    transform: translate(0,-50%);
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.MySpace .TotalInfo .TotalInfo_P_Div{
+    float: left;
+    margin-left: 10px;
+}
+
+.MySpace .TotalInfo .TotalInfo_P_Div span {
+    margin-left: 10px;
+    padding: 0 10px;
+    border-left: 1px solid #C0C0C0;
+    font-weight: 700;
+}
+
+.MySpace .TotalInfo .TotalInfo_P_Div .TotalInfo_nickName {
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.MySpace .TotalInfo .TotalInfo_P_Div .TotalInfo_userName {
+    font-size: 12px;
+    color: orange;
+}
+
+.SpaceNavigate {
+    float: left;
+    width: 200px;
+    height: 450px;
+    background-color: rgb(250,250,250);
+}
+
+.SpaceNavigate ul {
+    width: 200px;
+    height: 450px;
+}
+
+.SpaceNavigate ul li {
+    user-select: none;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+}
+
+.SpaceNavigate ul .moveIn {
+    background-color: rgb(225,228,234);
+}
+
+.SpaceNavigate ul .active {
+    color: white;
+    background-color: rgb(0,161,215);
+}
+
+.ShowSpecific {
+    float: left;
+    width: 1030px;
+    height: 450px;
+}
+
+.ShowSpecific .MyInfo {
+    width: 1030px;
+    height: 450px;
+    background-color: white;
+}
+
+.ShowSpecific .MyInfo .NickName_Div {
+    position: relative;
+    margin: 0 auto;
+    width: 900px;
+    height: 150px;
+    border-bottom: 1px solid #C0C0C0;
+}
+
+.ShowSpecific .MyInfo .NickName_Div .ChangeNickNameInput {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 225px;
+    height: 30px;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+    outline: none;
+}
+
+.ShowSpecific .MyInfo .NickName_Div .ChangeNickNameBtn {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #00a1d6;
+    color: white;
+}
+
+.ShowSpecific .MyInfo .NickName_Div .ChangeNickName_Err {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 73%;
+    transform: translate(-50%,-50%);
+    color: red;
+    font-size: 12px;
+}
+
+.ShowSpecific .MyInfo .Avatar_Div {
+    margin: 0 auto;
+    width: 900px;
+    height: 300px;
+}
+
+.ShowSpecific .MyInfo .Avatar_Div .Avatar_Upload_Div {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    width: 450px;
+    height: 300px;
+    border-right: 1px solid #C0C0C0;
+}
+
+.ShowSpecific .MyInfo .Avatar_Div .Avatar_Upload_Div .Avatar_Upload_Btn {
+    transition: all .3s;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    height: 85px;
+    background-color: rgb(241,242,245);
+    border: none;
+    font-size: 15px;
+    color: rgb(90,98,103);
+}
+
+.ShowSpecific .MyInfo .Avatar_Div .Avatar_Upload_Div .Avatar_Upload_Btn:hover{
+    background-color: rgb(229,233,239);
+}
+
+.ShowSpecific .MyInfo .Avatar_Div  input[type='file'] {
+    display: none;
+}
+
+
+.ShowSpecific .MyInfo .Avatar_Div img{
+    float: left;
+    margin-top: 100px;
+    margin-left: 200px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.ShowSpecific .MyInfo .Avatar_Div p{
+    position: relative;
+    top: 80px;
+    left: -75px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+.ShowSpecific .MyInfo .Avatar_Div .Avatar_Change_Btn {
+    position: relative;
+    top: 120px;
+    left: 50px;
+    cursor: pointer;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: rgb(244,245,247);
+    color: rgb(222,215,215);
+}
+
+/*我的收藏------------------------------------------------------------------------------*/
+
+.ShowSpecific .MyFavorite {
+    position: relative;
+    width: 1030px;
+    height: 450px;
+    background-color: white;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_Logo {
+    user-select: none;
+    box-sizing: border-box;
+    height: 60px;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_Logo img {
+    user-select: none;
+    float: left;
+    height: 60px;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_Logo .MyFavorite_Logo_P {
+    user-select: none;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #00a1d6;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_Logo .MyFavorite_ChooseType {
+    float: right;
+    margin-right: 40px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_Logo .MyFavorite_ChooseType a {
+    user-select: none;
+    padding: 0 10px;
+    border-left: 2px solid #C0C0C0;
+    font-size: 13px;
+    color: #ababab;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_Nothing {
+    user-select: none;
+    display: none;
+    width: 1030px;
+    height: 360px;
+    line-height: 360px;
+    font-size: 30px;
+    text-align: center;
+    color: #C0C0C0;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ShowLis {
+    user-select: none;
+    display: block;
+    width: 1030px;
+    height: 360px;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ShowLis li {
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: 104px;
+    width: 200px;
+    height: 300px;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ShowLis li img {
+    user-select: none;
+    display: block;
+    width: 200px;
+    height: 275px;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ShowLis li p {
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+    width: 200px;
+    height: 25px;
+    line-height: 25px;
+    background-color: rgba(0,0,0,.5);
+    font-size: 12px;
+    color: #DCDCDC;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ShowLis li i {
+    display: block;
+    user-select: none;
+    box-sizing: border-box;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: rgb(153,153,153);
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ChangePage {
+    display: block;
+    width: 1030px;
+    height: 30px;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ChangePage .MyFavorite_TotalPage {
+    user-select: none;
+    float: left;
+    height: 30px;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ChangePage .MyFavorite_TotalPage .MyFavorite_ResourceNum {
+    user-select: none;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ChangePage .MyFavorite_TotalPage .MyFavorite_ResourcePage {
+    user-select: none;
+    display: inline-block;
+    margin-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ChangePage .MyFavorite_OperatePage {
+    user-select: none;
+    float: right;
+    height: 30px;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ChangePage .MyFavorite_OperatePage .MyFavorite_NowPage {
+    user-select: none;
+    display: inline-block;
+    margin-right: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+.ShowSpecific .MyFavorite .MyFavorite_ChangePage .MyFavorite_OperatePage .MyFavorite_LastPage {
+    user-select: none;
+    display: inline-block;
+    margin-right: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+.ShowSpecific .MyFavorite .MyFavorite_ChangePage .MyFavorite_OperatePage .MyFavorite_NextPage {
+    user-select: none;
+    display: inline-block;
+    margin-right: 70px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+
+/*账号管理------------------------------------------------------------------------------*/
+
+.ShowSpecific .AccountManage {
+    position: relative;
+    width: 1030px;
+    height: 450px;
+    background-color: white;
+}
+
+.ShowSpecific .AccountManage span {
+    user-select: none;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #00a1d6;
+    padding: 0 5px;
+}
+
+.ShowSpecific .AccountManage .AccountManage_MainLogo {
+    user-select: none;
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 17px;
+    color: #ababab;
+}
+
+.ShowSpecific .AccountManage .AccountManage_Question {
+    user-select: none;
+    margin-top: 30px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.ShowSpecific .AccountManage .AccountManage_Answer {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 15px;
+    padding: 0 15px;
+    width: 500px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    background-color: rgb(245, 246, 250);
+    font-size: 17px;
+}
+
+.ShowSpecific .AccountManage .AccountManage_Error {
+    display: none;
+    position: absolute;
+    top: 145px;
+    left: 790px;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+    color: red;
+}
+
+.ShowSpecific .AccountManage .AccountManage_GoChangePageBtn {
+    cursor: pointer;
+    transition: all .2s;
+    margin: 50px auto 0;
+    display: block;
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(244,245,247);
+    color: rgb(222,215,215);
+}
+
+.ShowSpecific .AccountManage_ChangeDiv {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 630px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.ShowSpecific .AccountManage_ChangeDiv .AccountManage_DecorateDiv {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 15px;
+    width: 300px;
+    height: 500px;
+    border-radius: 15px;
+    background-color: #FCFCFC;
+    box-shadow: 0 6px 32px -7px rgba(29, 102, 189,.75);
+}
+
+.ShowSpecific .AccountManage_ChangeDiv .AccountManage_DecorateDiv span {
+    color: #3480fd;
+}
+
+.ShowSpecific .AccountManage_ChangeDiv .AccountManage_DecorateDiv .AccountManage_ChangeError {
+    display: none;
+    position: absolute;
+    top: 18px;
+    left: 110px;
+    font-size: 12px;
+    color: red;
+}
+
+.ShowSpecific .AccountManage_ChangeDiv .AccountManage_DecorateDiv .AccountManage_ChooseQuestion {
+    display: block;
+    box-sizing: border-box;
+    margin: 100px auto 0;
+    padding: 0 10px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgb(225, 246, 250);
+}
+
+.ShowSpecific .AccountManage_ChangeDiv .AccountManage_DecorateDiv .AccountManage_DefineQuestion {
+    display: none;
+    box-sizing: border-box;
+    margin: 10px auto 0;
+    padding: 0 10px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgb(225, 246, 250);
+}
+
+.ShowSpecific .AccountManage_ChangeDiv .AccountManage_DecorateDiv .AccountManage_newAnswer {
+    display: block;
+    box-sizing: border-box;
+    margin: 10px auto 0;
+    padding: 0 10px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgb(225, 246, 250);
+}
+
+.ShowSpecific  .AccountManage_ChangeDiv .AccountManage_DecorateDiv .AccountManage_ConfirmChangeBtn {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 100px;
+    height: 30px;
+    background-color: #3480fd;
+    color: white;
+}
+
+.ShowSpecific .AccountManage_ChangeDiv .AccountManage_DecorateDiv .AccountManage_ExitChangeBtn {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 30px;
+    width: 100px;
+    height: 30px;
+    background-color: #3480fd;
+    color: white;
+}
+
+/*资源管理-----------------------------------------------------------------------------*/
+
+.ShowSpecific .ResourceManage {
+    width: 1030px;
+    height: 450px;
+    background-color: white;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_Logo {
+    user-select: none;
+    height: 60px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_Logo img {
+    float: left;
+    height: 60px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_Logo .ResourceManage_Logo_P {
+    float: left;
+    transform:translate(-20px,0);
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_Logo .ResourceManage_Logo_Type {
+    float: right;
+    height: 60px;
+    line-height: 60px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_Logo .ResourceManage_Logo_Type a{
+    margin-right: 10px;
+    padding: 0 10px;
+    font-size: 13px;
+    color: #ababab;
+    border-left: 1px solid #ababab;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_Logo input[type="button"] {
+    transition: all .2s;
+    cursor: pointer;
+    float: right;
+    margin-right: 100px;
+    margin-top: 15px;
+    padding: 0 10px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: #7FFF00;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_Logo input[type="button"]:hover {
+    background-color: #FFD700;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_ul {
+    display: block;
+    width: 1030px;
+    height: 360px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_ul li {
+    user-select: none;
+    float: left;
+    margin-top: 25px;
+    margin-left: 104px;
+    width: 200px;
+    height: 300px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_ul li img{
+    user-select: none;
+    display: block;
+    width: 200px;
+    height: 275px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_ul li p {
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+    width: 200px;
+    height: 25px;
+    line-height: 25px;
+    background-color: rgba(0,0,0,.5);
+    font-size: 12px;
+    color: #DCDCDC;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_ul li {
+    display: block;
+    user-select: none;
+    box-sizing: border-box;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: rgb(153,153,153);
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_FootPage {
+    user-select: none;
+    display: block;
+    width: 1030px;
+    height: 30px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_FootPage .ResourceManage_TotalPage {
+    user-select: none;
+    float: left;
+    height: 30px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_FootPage .ResourceManage_ResourceNum {
+    user-select: none;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_FootPage .ResourceManage_ResourcePage {
+    user-select: none;
+    display: inline-block;
+    margin-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_FootPage .ResourceManage_OperatePage {
+    user-select: none;
+    float: right;
+    height: 30px;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_FootPage .ResourceManage_OperatePage .ResourceManage_NowPage {
+    user-select: none;
+    display: inline-block;
+    margin-right: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_FootPage .ResourceManage_OperatePage .ResourceManage_LastPage {
+    user-select: none;
+    display: inline-block;
+    margin-right: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+.ShowSpecific .ResourceManage .ResourceManage_FootPage .ResourceManage_OperatePage .ResourceManage_NextPage {
+    user-select: none;
+    display: inline-block;
+    margin-right: 70px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ababab;
+}
+
+.ShowSpecific .ResourceUpload {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 630px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 15px;
+    width: 600px;
+    height: 500px;
+    border-radius: 15px;
+    background-color: #FCFCFC;
+    box-shadow: 0 6px 32px -7px rgba(29, 102, 189,.75);
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Logo {
+    user-select: none;
+    height: 60px;
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Logo img {
+    float: left;
+    height: 60px;
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Logo .ResourceUpload_Logo_P {
+    display: inline-block;
+    transform: translate(-15px,0);
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #3480fd;
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Logo .ResourceManage_Logo_Error {
+    display: none;
+    position: absolute;
+    left: 185px;
+    top: 36px;
+    color: red;
+    font-size: 12px;
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Logo .ResourceUpload_selectType {
+    float: right;
+    width: 100px;
+    transform: translate(-30px,25px);
+    border: none;
+    outline: none;
+    background-color: #C0C0C0;
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Img {
+    position: relative;
+    height: 200px;
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Img img {
+    float: left;
+    padding: 0 5px;
+    margin-left: 10px;
+    width: 150px;
+    height: 200px;
+    border-right: 2px solid #C0C0C0;
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Img input[type="file"] {
+    position: absolute;
+    top: 50%;
+    left: 270px;
+    transform: translate(0,-50%);
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Info input {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 0 10px;
+    width: 150px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(225,246,250);
+    color: #5b5b5b;
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Info .ResourceUpload_ISBN {
+    display: none;
+}
+
+.ShowSpecific .ResourceUpload .ResourceUpload_Main .ResourceUpload_Info input[type="button"] {
+    cursor: pointer;
+    margin-left: 85px;
+}
+
+.ShowSpecific .ResourceMaintain {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 630px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_ChooseFunc {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 15px;
+    width: 300px;
+    height: 250px;
+    border-radius: 15px;
+    background-color: #FCFCFC;
+    box-shadow: 0 6px 32px -7px rgba(29, 102, 189,.75);
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_ChooseFunc input[type="button"] {
+    cursor: pointer;
+    margin-top: 48px;
+    margin-left: 22px;
+    width: 100px;
+    height: 40px;
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainImg {
+    display: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 15px;
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    background-color: #FCFCFC;
+    box-shadow: 0 6px 32px -7px rgba(29, 102, 189,.75);
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainImg .ResourceMaintain_maintainImg_Logo {
+    height: 30px;
+}
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainImg .ResourceMaintain_maintainImg_Logo img {
+    float: left;
+    height: 30px;
+}
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainImg .ResourceMaintain_maintainImg_Logo span {
+    float: left;
+    transform: translate(-10px,0);
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainImg .ResourceMaintain_maintainImg_showImg {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 275px;
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainImg input[type="file"] {
+    display: block;
+    margin-top: 10px;
+    transform: translate(80px,0);
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainImg input[type="button"] {
+    margin-top: 10px;
+    margin-left: 24px;
+    width: 100px;
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainInfo {
+    display: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 15px;
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    background-color: #FCFCFC;
+    box-shadow: 0 6px 32px -7px rgba(29, 102, 189,.75);
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainInfo .ResourceMaintain_maintainInfo_Logo {
+    height: 30px;
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainInfo .ResourceMaintain_maintainInfo_Logo img {
+    float: left;
+    height: 30px;
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainInfo .ResourceMaintain_maintainInfo_Logo span {
+    float: left;
+    transform: translate(-10px,0);
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainInfo .ResourceMaintain_maintainInfo_Logo i {
+    display: none;
+    float: left;
+    margin-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: red;
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainInfo input[type="text"] {
+    display: block;
+    margin: 40px auto 0;
+    padding: 0 10px;
+    width: 200px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(225,246,250);
+    color: #5b5b5b;
+}
+
+.ShowSpecific .ResourceMaintain .ResourceMaintain_maintainInfo input[type="button"] {
+    margin-top: 40px;
+    margin-left: 24px;
+    width: 100px;
+}

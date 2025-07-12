@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/detailstage.css">
+    <title>detailPage</title>
+</head>
+<body>
+<div class="commonNavigate">
+    <div class="NavigateLogo">
+        <a href="show.html">
+            <img src="img/logo.png" alt="">
+            <p class="NavigateLogo_P">阅千章资源管理系统</p>
+        </a>
+    </div>
+    <div class="Leave">
+        <a href="login.html">|&nbsp;退出登录</a>
+    </div>
+    <div class="userAvatar">
+        <a href="space.html">
+            <div class="img_Div"><img src="#" alt="点击进入个人空间"></div>
+            <p class="nickName"></p>
+        </a>
+    </div>
+</div>
+
+<div class="MySpace">
+    <div class="TotalInfo">
+        <div class="TotalInfo_P_Div">
+            <div class="resourceInfo">
+                <h2 id="resourceName"></h2>
+                <img id="resourceImage" src="" alt="资源图片">
+                <p><strong>作者：</strong><span id="resourceDirector"></span></p>
+                <p><strong>简介：</strong><span id="resourceSynopsis"></span></p>
+                <p><strong>下载链接：</strong><a id="resourceUrl" href="" target="_blank">点击下载</a></p>
+                <p><strong>点击量：</strong><span id="resourceClicks"></span></p>
+                <button id="favoriteButton">收藏</button>
+                <button id="unfavoriteButton">取消收藏</button>
+            </div>
+            <div class="commentsSection">
+                <h3>评论区</h3>
+                <div id="commentsList"></div>
+                <textarea id="newComment" placeholder="输入你的评论"></textarea>
+                <button id="postCommentButton">发表评论</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/axios.js"></script>
+<script src="/js/detailstage.js"></script>
+<script src="js/common.js"></script>
+<script src="js/space.js"></script>
+</body>
+</html>

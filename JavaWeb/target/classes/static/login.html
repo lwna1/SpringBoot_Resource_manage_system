@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="js/axios.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="outer-container">
+        <h1 class="system-title">阅千章资源管理系统</h1>
+
+        <div class="loginForm" id="normalLoginTab" style="display: block">
+            <img src="img/logo.png" alt="Logo">
+            <h2>登录</h2>
+
+            <div class="loginWrap">
+                <input type="text" id="username" name="username" placeholder="用户名"  required>
+                <input type="password" id="password" name="password" placeholder="密码" required>
+
+                <input type="button" class="loginButton" value="登录">
+
+                <div class="error" id="error-message"></div>
+
+
+                <div class="links">
+                    <input type="button" value="注册"  class= "link-button"  >
+                    <input type="button" value="找回密码" class= "link-button">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const btn = document.querySelector('input[value="登录"]')
+    const btn1 = document.querySelector('input[value="找回密码"]')
+    const btn2 = document.querySelector('input[value="注册"]')
+    let data
+
+    btn.addEventListener('click',function () {
+        axios.get(`/Login/loginCheck?username=${document.querySelector('#username').value}`).then(result => {
+            // console.log(result.data.data)
+            if (result.data.data === 0) {
+                document.querySelector('.error').innerHTML = "该用户名不存在"
+                console.log("该用户名不存在")
+            }
+
+            else {
+                if (result.data.data > 0) {
+                    let loginData
+                    axios.get(`/Login/login?username=${document.querySelector('#username').value}&password=${document.querySelector('#password').value}`).then(result => {
+                        loginData = result.data
+                        console.log("用户数据")
+                        console.log(loginData)
+                    }).finally(() => {
+                        if (loginData.code === 0) {
+                            document.querySelector('.error').innerHTML = "密码错误"
+                            console.log("密码错误")
+                        }
+                        if (loginData.code === 1)
+                        {
+                            data = loginData.data
+                            console.log("data=------------------")
+                            console.log(data)
+                            console.log("------------------------")
+                            sessionStorage.setItem("user", JSON.stringify(data))
+                            console.log("跳转至space.html")
+                            window.location.href = 'space.html'
+                        }
+
+                    })
+                }
+
+            }
+
+
+        })
+    })
+    btn1.addEventListener('click',function ()
+    {
+        window.location.href = 'FindPassword.html'
+    })
+    btn2.addEventListener('click',function ()
+    {
+        window.location.href = 'register.html'
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamwork.DAO.SpaceMapper">
+    <insert id="insertNewFilm">
+        insert teamwork.films (filmName,director,releaseDate,filmImg,filmUrl,filmSynopsis,uploadDate) values (#{name},#{writer},#{publishDate},'img/Space/uploadDefault.jpg',#{url},#{introduce},now())
+    </insert>
+    <insert id="insertNewBook">
+        insert teamwork.books (bookName,writer,publicDate,bookImg,bookUrl,ISBN,bookSynopsis,uploadDate) values (#{name},#{writer},#{publishDate},'img/Space/uploadDefault.jpg',#{url},#{ISBN},#{introduce},now())
+    </insert>
+    <update id="changeNickname">
+        update teamwork.user set nickname = #{newNickname} where userId = #{userId}
+    </update>
+    <update id="changeAvatar">
+        update teamwork.user set avatar = #{newAvatarUrl} where userId = #{userId}
+    </update>
+    <update id="changeQuestion">
+        update teamwork.user set question = #{newQuestion},answer = #{newAnswer} where userId = #{userId}
+    </update>
+    <update id="ChangeFilmImg">
+        update teamwork.films set filmImg = #{newImgUrl} where filmId = #{filmId}
+    </update>
+    <update id="ChangeBookImg">
+        update teamwork.books set bookImg = #{newImgUrl} where bookId = #{bookId}
+    </update>
+    <update id="MaintainFilmInfo">
+        update teamwork.films set filmUrl = #{url},filmSynopsis = #{introduce} where filmId = #{resourceId}
+    </update>
+    <update id="maintainBookInfo">
+        update teamwork.books set bookUrl = #{url},ISBN = #{ISBN},bookSynopsis = #{introduce} where bookId = #{resourceId}
+    </update>
+    <delete id="delFilm">
+        delete from teamwork.films where filmId = #{resourceId}
+    </delete>
+    <delete id="delBook">
+        delete from teamwork.books where bookId = #{resourceId}
+    </delete>
+
+    <select id="getNumOfFavoriteBook" resultType="java.lang.Integer">
+        select count(*) from teamwork.collection_book where collector = #{userId}
+    </select>
+
+    <select id="getNumOfFavoriteFilm" resultType="java.lang.Integer">
+        select count(*) from teamwork.collection_film where collector = #{userId}
+    </select>
+
+    <select id="getNumOfCommentBook" resultType="java.lang.Integer">
+        select count(*) from teamwork.comments_book where commentatorId = #{userId}
+    </select>
+    <select id="getNumOfCommentFilm" resultType="java.lang.Integer">
+        select count(*) from teamwork.comments_film where commentatorId = #{userId}
+    </select>
+    <select id="getUser" resultType="com.teamwork.entity.User">
+        select * from teamwork.user where userId = #{userId}
+    </select>
+    <select id="getMyFavoriteFilm" resultType="com.teamwork.entity.Film">
+        select * from teamwork.films join teamwork.collection_film on filmId = collectFilmId where collector = #{userId} limit #{startPage},3
+    </select>
+    <select id="getMyFavoriteBook" resultType="com.teamwork.entity.Book">
+        select * from teamwork.books join teamwork.collection_book on bookId = collectBookId where collector = #{userId} limit #{startPage},3
+    </select>
+    <select id="getAllFilm" resultType="com.teamwork.entity.Film">
+        select * from teamwork.films limit #{start},3
+    </select>
+    <select id="getAllFilmNum" resultType="java.lang.Integer">
+        select count(*) from teamwork.films
+    </select>
+    <select id="getAllBook" resultType="com.teamwork.entity.Book">
+        select * from teamwork.books limit #{start},3
+    </select>
+    <select id="getAllBookNum" resultType="java.lang.Integer">
+        select count(*) from teamwork.books
+    </select>
+    <select id="getMaxFilmId" resultType="java.lang.Integer">
+        select max(filmId) from teamwork.films
+    </select>
+    <select id="getMaxBookId" resultType="java.lang.Integer">
+        select max(bookId) from teamwork.books
+    </select>
+    <select id="getSingleFilm" resultType="com.teamwork.entity.Film">
+        select * from teamwork.films where filmId = #{resourceId}
+    </select>
+    <select id="getSingleBook" resultType="com.teamwork.entity.Book">
+        select * from teamwork.books where bookId = #{resourceId}
+    </select>
+
+</mapper>

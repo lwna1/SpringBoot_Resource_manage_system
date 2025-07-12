@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/show.css">
+    <title>show</title>
+</head>
+<body>
+<div class="commonNavigate">
+    <div class="NavigateLogo">
+        <a href="show.html">
+            <img src="img/logo.png" alt="">
+            <p class="NavigateLogo_P">阅千章资源管理系统</p>
+        </a>
+    </div>
+    <div class="Leave">
+        <a href="login.html">|&nbsp;退出登录</a>
+    </div>
+    <div class="userAvatar">
+        <a href="space.html">
+            <div class="img_Div"><img src="#" alt="点击进入个人空间"></div>
+            <p class="nickName"></p>
+        </a>
+    </div>
+</div>
+<div class="MySpace">
+    <div class="TotalInfo">
+        <div class="TotalInfo_P_Div">
+            <header>
+                <select id="search-type">
+                    <option value="books">书籍</option>
+                    <option value="movies">电影</option>
+                </select>
+                <input type="text" id="search-bar" placeholder="搜索书籍或电影...">
+                <button id="search-btn">搜索</button>
+                <button id="books-btn">书籍</button>
+                <button id="movies-btn">电影</button>
+            </header>
+            <main>
+                <div id="items-container" class="items-container"></div>
+                <button id="prev-page">上一页</button>
+                <button id="next-page">下一页</button>
+            </main>
+        </div>
+    </div>
+</div>
+<script src="js/show.js"></script>
+<script src="js/axios.js"></script>
+<script src="js/common.js"></script>
+<script src="js/space.js"></script>
+</body>
+</html>

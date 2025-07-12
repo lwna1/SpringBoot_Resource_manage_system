@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Space</title>
+    <script src="js/axios.js"></script>
+    <link rel="stylesheet" href="css/Space.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+        <!--导航栏部分   start-->
+        <div class="commonNavigate">
+            <div class="NavigateLogo">
+                <a href="show.html">
+                    <img src="img/logo.png" alt="">
+                    <p class="NavigateLogo_P">阅千章资源管理系统</p>
+                </a>
+            </div>
+            <div class="Leave">
+                <a href="login.html">|&nbsp;退出登录</a>
+            </div>
+            <div class="userAvatar">
+                <a href="space.html">
+                    <div class="img_Div"><img src="#" alt="点击进入个人空间"></div>
+                    <p class="nickName"></p>
+                </a>
+            </div>
+        </div>
+        <!--导航栏部分   end-->
+
+        <!--个人空间部分 start   [我的信息(修改昵称和头像),我的收藏(图书和电影分开),账号管理(修改密码和修改密保),资源管理(管理员可见,删除资源和上传资源)]-->
+        <div class="MySpace">
+            <!--总信息一览  start-->
+            <div class="TotalInfo">
+                <img src="#" alt="">
+                <div class="TotalInfo_P_Div">
+                    <p class="TotalInfo_nickName"></p> <span class="span_favorite"></span> 收藏<span class="span_comment"></span> 评论
+                    <p class="TotalInfo_userName"></p>
+                </div>
+            </div>
+            <!--总信息一览  start-->
+
+            <!--侧边导航栏  start-->
+            <div class="SpaceNavigate">
+                <ul>
+                    <li class="Li_MyInfo active">我的信息</li>
+                    <li class="Li_MyFavorite">我的收藏</li>
+                    <li class="Li_AccountManage">账号管理</li>
+                    <li class="Li_ResourceManage">资源管理</li>
+                </ul>
+            </div>
+            <!--侧边导航栏  start-->
+
+        <!--展示页面(操作时设置其可见性即可)-->
+            <div class="ShowSpecific">
+                <!--我的信息  start-->
+                <div class="MyInfo">
+                    <div class="NickName_Div">
+                        <label>
+                            <input type="text" class="ChangeNickNameInput" placeholder="请输入新的用户名" maxlength="10">
+                            <input type="button" class="ChangeNickNameBtn" value="修改">
+                        </label>
+                        <p class="ChangeNickName_Err">昵称不能为空且不能存在空格</p>
+                    </div>
+                    <div class="Avatar_Div">
+                            <div class="Avatar_Upload_Div">
+                                <label>
+                                    <input type="button" value="选择本地图片" class="Avatar_Upload_Btn">
+                                </label>
+                            </div>
+                            <img src="" alt="">
+                            <p>预览图片</p>
+                        <form action="Space/ChangeAvatar" enctype="multipart/form-data" method="post" target="nm_iframe">
+                            <input type="file" name="file" accept="image/jpeg,image/png">
+                            <input type="submit" value="更新" class="Avatar_Change_Btn">
+                            <input type="hidden" name="userId">
+                        </form>
+                    </div>
+                </div>
+                <!--form不跳转-->
+                <iframe id="id_iframe" name="nm_iframe" style="display: none"></iframe>
+                <!--我的信息  end-->
+
+                <!--我的收藏  start-->
+                <div class="MyFavorite">
+                    <div class="MyFavorite_Logo">
+                        <img src="img/Space/MyFavorite_Logo.png" alt="">
+                        <p class="MyFavorite_Logo_P">我的收藏</p>
+                        <p class="MyFavorite_ChooseType"><a href="#" class="MyFavorite_Film">电影</a> <a href="#" class="MyFavorite_Book">图书</a></p>
+                    </div>
+                    <ul class="MyFavorite_ShowLis">
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <img src="img/Film/Film_img_1.jpg" alt="">-->
+<!--                            </a>-->
+<!--                            <p>新干线变形机器人 拯救世界</p>-->
+<!--                            <i>收藏于: <span>2024-07-20</span></i>-->
+<!--                        </li>-->
+                    </ul>
+                    <p class="MyFavorite_Nothing">还没有收藏,快去寻找你喜欢的内容吧!</p>
+                    <div class="MyFavorite_ChangePage">
+                        <p class="MyFavorite_TotalPage">
+                            <span class="MyFavorite_ResourceNum"></span>
+                            <span class="MyFavorite_ResourcePage"></span>
+                        </p>
+                        <p class="MyFavorite_OperatePage">
+                            <span class="MyFavorite_NowPage"></span>
+                            <a href="#" class="MyFavorite_LastPage">上一页</a>
+                            <a href="#" class="MyFavorite_NextPage">下一页</a>
+                        </p>
+                    </div>
+                </div>
+                <!--我的收藏  end-->
+
+                <!--账号管理  start-->
+                <div class="AccountManage">
+                    <span>|</span>
+                    <p class="AccountManage_MainLogo">密保修改</p>
+                    <p class="AccountManage_Question"></p>
+                    <label>
+                        <input type="text" class="AccountManage_Answer">
+                    </label>
+                    <p class="AccountManage_Error">密保密码输入错误!</p>
+                    <input type="button" value="修改密保" class="AccountManage_GoChangePageBtn">
+                </div>
+                <div class="AccountManage_ChangeDiv">
+                    <div class="AccountManage_DecorateDiv">
+                        <span>修改密保</span>
+                        <p class="AccountManage_ChangeError"></p>
+                        <label>
+                            <select class="AccountManage_ChooseQuestion">
+                                <option hidden="hidden" value="">请选择一个问题</option>
+                                <option value="你的幸运数字是什么">你的幸运数字是什么</option>
+                                <option value="对你影响最大的一本书">对你影响最大的一本书</option>
+                                <option value="令你最难忘的电影的名称">令你最难忘的电影的名称</option>
+                                <option value="自定义问题">自定义问题</option>
+                            </select>
+                            <input type="text" class="AccountManage_DefineQuestion" placeholder="请输入自定义问题" maxlength="25">
+                            <input type="text" class="AccountManage_newAnswer" placeholder="请输入设定答案" maxlength="25">
+                            <input type="button" value="确定修改" class="AccountManage_ConfirmChangeBtn">
+                            <input type="button" value="退出" class="AccountManage_ExitChangeBtn">
+                        </label>
+                    </div>
+                </div>
+                <!--账号管理  end-->
+
+                <!--资源管理  start-->
+                <div class="ResourceManage">
+                    <div class="ResourceManage_Logo">
+                        <img src="img/logo.png" alt="">
+                        <p class="ResourceManage_Logo_P">资源管理</p>
+                        <div class="ResourceManage_Logo_Type">
+                            <a href="#" class="ResourceManage_Logo_Film">电影</a>
+                            <a href="#" class="ResourceManage_Logo_Book">图书</a>
+                        </div>
+                        <input type="button" value="上传资料">
+                    </div>
+                    <ul class="ResourceManage_ul">
+<!--                        <li>-->
+<!--                            <a href="#">-->
+<!--                                <img src="img/Film/Film_img_1.jpg" alt="">-->
+<!--                            </a>-->
+<!--                            <p>新干线变形机器人 拯救世界</p>-->
+<!--                            <i>收藏于: <span>2024-07-20</span></i>-->
+<!--                        </li>-->
+                    </ul>
+                    <div class="ResourceManage_FootPage">
+                        <p class="ResourceManage_TotalPage">
+                            <span class="ResourceManage_ResourceNum"></span>
+                            <span class="ResourceManage_ResourcePage"></span>
+                        </p>
+                        <p class="ResourceManage_OperatePage">
+                            <span class="ResourceManage_NowPage"></span>
+                            <a href="#" class="ResourceManage_LastPage">上一页</a>
+                            <a href="#" class="ResourceManage_NextPage">下一页</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="ResourceUpload">
+                    <div class="ResourceUpload_Main">
+                        <div class="ResourceUpload_Logo">
+                            <img src="img/logo.png" alt="">
+                            <p class="ResourceUpload_Logo_P">上传资料</p>
+                            <p class="ResourceManage_Logo_Error">作品名称不能为空</p>
+                            <label>
+                                <select class="ResourceUpload_selectType">
+                                    <option value="Film">电影</option>
+                                    <option value="Book">图书</option>
+                                </select>
+                            </label>
+                        </div>
+                        <form action="" method="post" enctype="multipart/form-data" target="nm_iframe">
+                            <div class="ResourceUpload_Img">
+                                <img src="img/Space/uploadDefault.jpg" alt="">
+                                <label>
+                                    <input type="file" name="file" id="uploadFile">
+                                </label>
+                            </div>
+                            <div class="ResourceUpload_Info">
+                                <label>
+                                    <input type="text" name="name" class="ResourceUpload_Name" maxlength="30" placeholder="请输入作品名称">
+                                    <input type="text" name="writer" class="ResourceUpload_Writer" maxlength="20" placeholder="请输入作者">
+                                    <input type="date" name="publishDate" class="ResourceUpload_publishDate" placeholder=请选择出版日期">
+                                    <input type="text" name="url" class="ResourceUpload_url" maxlength="200" placeholder="请输入作品URL">
+                                    <input type="text" name="ISBN" class="ResourceUpload_ISBN" maxlength="13" placeholder="请输入ISBN">
+                                    <input type="text" name="introduce" class="ResourceUpload_Introduce" maxlength="255" placeholder="请输入作品简介">
+                                    <input type="button" class="ResourceUpload_confirmBtn" value="上传">
+                                    <input type="button" class="ResourceUpload_ExitBtn" value="退出">
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="ResourceMaintain">
+                    <div class="ResourceMaintain_ChooseFunc">
+                        <input type="button" value="修改图片" class="ResourceMaintain_ChangeImgBtn">
+                        <input type="button" value="修改信息" class="ResourceMaintain_ChangeInfoBtn">
+                        <input type="button" value="删除资源" class="ResourceMaintain_DelResourceBtn">
+                        <input type="button" value="退出" class="ResourceMaintain_ExitBtn">
+                    </div>
+                    <div class="ResourceMaintain_maintainImg">
+                        <p class="ResourceMaintain_maintainImg_Logo">
+                            <img src="img/logo.png" alt="">
+                            <span>修改海报</span>
+                        </p>
+                        <img src="img/Space/uploadDefault.jpg" alt="" class="ResourceMaintain_maintainImg_showImg">
+                        <form action="" method="post" enctype="multipart/form-data" target="nm_iframe">
+                            <input type="file" name="file" id="maintain_file">
+                            <input type="hidden" name = "resourceId">
+                            <input type="button" value="替换">
+                            <input type="button" value="退出">
+                        </form>
+                    </div>
+                    <div class="ResourceMaintain_maintainInfo">
+                        <p class="ResourceMaintain_maintainInfo_Logo">
+                            <img src="img/logo.png" alt="">
+                            <span>修改信息</span>
+                            <i></i>
+                        </p>
+                        <label>
+                            <input type="text" class="ResourceMaintain_maintainInfo_URL" placeholder="请输入作品URL" maxlength="200">
+                            <input type="text" class="ResourceMaintain_maintainInfo_ISBN" placeholder="请输入图书ISBN" maxlength="13">
+                            <input type="text" class="ResourceMaintain_maintainInfo_Introduce" placeholder="请输入作品简介" maxlength="255">
+                            <input type="button" value="更新">
+                            <input type="button" value="退出">
+                        </label>
+                    </div>
+                </div>
+                <!--资源管理  end-->
+            </div>
+
+
+        </div>
+        <!--个人空间部分 end-->
+
+        <!--弹出框-->
+        <div class="alert">
+            <div class="Alert_Content">
+                <div class="Alert_Logo">
+                    <img src="/img/logo.png" alt="">
+                    <p class="Alert_Logo_P">阅千章资源管理系统提醒您</p>
+                </div>
+                <p class="Alert_P">!</p>
+                <label>
+                    <input type="button" value="确定" class="Alert_Btn">
+                </label>
+            </div>
+        </div>
+</body>
+
+<script src="js/space.js"></script>
+<script src="js/common.js"></script>
+
+</html>
